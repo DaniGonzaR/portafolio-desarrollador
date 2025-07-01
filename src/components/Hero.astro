@@ -21,16 +21,17 @@ const personalImageAlt = "Daniel González";
         href="https://www.linkedin.com/in/danielgonzalez-rodriguez/"
         target="_blank"
         rel="noopener"
-        class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-        <Badge>Disponible para colaborar</Badge>
+      <div class="flex flex-col items-center justify-center stagger-animation transition md:justify-center md:hover:scale-105">
+        <Badge class="pulse-animation">Disponible para colaborar</Badge>
+      </div>
     </a>
 </div>
 
   <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white relative py-1"
   >
-    Hola, soy Daniel
+    <span class="gradient-text inline-block">Hola, soy Daniel</span>
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-green-300 [&>strong]:text-green-500 [&>strong]:font-semibold dark:text-gray-300"
