@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <title>Integration Icon</title>
+    <g fill="none" fill-rule="evenodd">
+        <rect fill="#3498DB" x="0" y="0" width="24" height="24" rx="4"/>
+        <path d="M6,12 C6,8.6862915 8.6862915,6 12,6 C15.3137085,6 18,8.6862915 18,12" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M18,12 C18,15.3137085 15.3137085,18 12,18 C8.6862915,18 6,15.3137085 6,12" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3,2"/>
+        <rect fill="#FFFFFF" x="4" y="11" width="4" height="2" rx="1"/>
+        <rect fill="#FFFFFF" x="16" y="11" width="4" height="2" rx="1"/>
+        <circle fill="#FFFFFF" cx="12" cy="6" r="2"/>
+        <circle fill="#FFFFFF" cx="12" cy="18" r="2"/>
+    </g>
+</svg>

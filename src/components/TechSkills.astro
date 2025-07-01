@@ -1,0 +1,250 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+
+// Definición de tecnologías con logos y categorías
+const TECH_SKILLS = [
+  {
+    category: "Frontend",
+    technologies: [
+      { 
+        name: "JavaScript", 
+        level: 90,
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
+      },
+      { 
+        name: "HTML5", 
+        level: 85,
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
+      },
+      { 
+        name: "CSS3", 
+        level: 85,
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
+      },
+      { 
+        name: "Angular", 
+        level: 75,
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" 
+      },
+      { 
+        name: "Tailwind", 
+        level: 80,
+        logo: "https://img.icons8.com/color/240/null/tailwindcss.png" 
+      }
+    ]
+  },
+  {
+    category: "Backend",
+    technologies: [
+      { 
+        name: "NodeJS", 
+        level: 85,
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" 
+      },
+      { 
+        name: "PHP", 
+        level: 80,
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" 
+      },
+      { 
+        name: "MySQL", 
+        level: 75,
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" 
+      },
+      { 
+        name: "APIs", 
+        level: 90,
+        logo: "https://cdn-icons-png.flaticon.com/512/603/603197.png" 
+      },
+      { 
+        name: "Java", 
+        level: 70,
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" 
+      }
+    ]
+  },
+  {
+    category: "Herramientas",
+    technologies: [
+      { 
+        name: "Git", 
+        level: 85,
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" 
+      },
+      { 
+        name: "Docker", 
+        level: 70,
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" 
+      },
+      { 
+        name: "Postman", 
+        level: 90,
+        logo: "https://cdn.worldvectorlogo.com/logos/postman.svg" 
+      },
+      { 
+        name: "ZohoCRM", 
+        level: 80,
+        logo: "https://www.zohowebstatic.com/sites/zweb/images/ogimage/zoho-logo.png" 
+      },
+      { 
+        name: "Windsurf", 
+        level: 75,
+        logo: "https://windsurf.com/favicon.ico" 
+      }
+    ]
+  },
+  {
+    category: "Automatización",
+    technologies: [
+      { 
+        name: "n8n", 
+        level: 85,
+        logo: "https://avatars.githubusercontent.com/u/45487711" 
+      },
+      { 
+        name: "Webhooks", 
+        level: 90,
+        logo: "https://www.n8n.io/favicon.ico" 
+      },
+      { 
+        name: "IA", 
+        level: 80,
+        logo: "https://cdn-icons-png.flaticon.com/512/2103/2103652.png" 
+      },
+      { 
+        name: "Data Science", 
+        level: 65,
+        logo: "https://cdn-icons-png.flaticon.com/512/9672/9672250.png" 
+      },
+      { 
+        name: "Power Automate", 
+        level: 70,
+        logo: "https://img.icons8.com/fluency/240/null/microsoft-power-automate-2020.png" 
+      }
+    ]
+  }
+]
+
+// Función para determinar el color basado en el nivel
+function getLevelColor(level: number) {
+  if (level >= 90) return "text-green-400";
+  if (level >= 80) return "text-blue-400";
+  if (level >= 70) return "text-indigo-400";
+  return "text-purple-400";
+}
+---
+
+<section class="fade-in-section">
+  <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Mis Tecnologías</h2>
+  
+  <div class="grid grid-cols-1 gap-12 mb-16">
+    {TECH_SKILLS.map((group, index) => (
+      <div class="fade-in-section section-container">
+        <h3 class={`text-2xl font-bold mb-6 text-center category-title category-${index}`}>{group.category}</h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {group.technologies.map((tech) => (
+            <div class="tech-card flex flex-col items-center justify-between p-4 bg-white/5 backdrop-blur-md rounded-lg border border-gray-800/30 hover:border-gray-700/60 transition-all duration-300 hover-lift h-44 w-full">
+              <div class="tech-icon-container rounded-xl p-3 bg-gray-800/40 w-20 h-20 flex items-center justify-center overflow-hidden">
+                <img 
+                  src={tech.logo} 
+                  alt={`${tech.name} logo`} 
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                  class="tech-icon w-14 h-14 object-contain"
+                  onerror="this.onerror=null; this.src='/default-tech-icon.svg';"
+                />
+              </div>
+              <div class="text-center mt-2">
+                <h4 class="text-md font-medium">{tech.name}</h4>
+                <span class={`text-sm mt-1 ${getLevelColor(tech.level)}`}>{tech.level}%</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .section-container {
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+  }
+  
+  .category-title {
+    color: #a3e635;
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .category-0 {
+    color: #60a5fa; /* Azul para Frontend */
+  }
+  
+  .category-1 {
+    color: #34d399; /* Verde para Backend */
+  }
+  
+  .category-2 {
+    color: #f59e0b; /* Ámbar para Herramientas */
+  }
+  
+  .category-3 {
+    color: #a78bfa; /* Violeta para Automatización */
+  }
+  
+  .tech-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tech-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.05), transparent);
+    transform: translateX(-100%);
+    transition: all 0.6s ease;
+  }
+  
+  .tech-card:hover::after {
+    transform: translateX(100%);
+  }
+  
+  .tech-icon {
+    filter: grayscale(20%);
+    transition: all 0.3s ease;
+  }
+  
+  .tech-card:hover .tech-icon {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+  }
+</style>
+
+<script>
+  // Crear un fallback para las imágenes que no se puedan cargar
+  document.addEventListener('astro:page-load', () => {
+    const techIcons = document.querySelectorAll('.tech-icon');
+    techIcons.forEach(icon => {
+      if (icon instanceof HTMLImageElement) {
+        icon.onerror = function() {
+          this.onerror = null;
+          this.src = '/default-tech-icon.svg';
+        };
+      }
+    });
+  });
+</script>

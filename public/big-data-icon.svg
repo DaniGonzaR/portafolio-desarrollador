@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <title>Big Data Icon</title>
+    <g fill="none" fill-rule="evenodd">
+        <rect fill="#8E44AD" x="0" y="0" width="24" height="24" rx="4"/>
+        <path d="M12,4 C15.3137085,4 18,5.790861 18,8 C18,10.209139 15.3137085,12 12,12 C8.6862915,12 6,10.209139 6,8 C6,5.790861 8.6862915,4 12,4 Z" stroke="#FFFFFF" stroke-width="1.5"/>
+        <path d="M6,12 L6,16 C6,18.209139 8.6862915,20 12,20 C15.3137085,20 18,18.209139 18,16 L18,12" stroke="#FFFFFF" stroke-width="1.5"/>
+        <circle fill="#FFFFFF" cx="8" cy="8" r="1"/>
+        <circle fill="#FFFFFF" cx="12" cy="6" r="1"/>
+        <circle fill="#FFFFFF" cx="16" cy="8" r="1"/>
+        <circle fill="#FFFFFF" cx="8" cy="16" r="1"/>
+        <circle fill="#FFFFFF" cx="12" cy="18" r="1"/>
+        <circle fill="#FFFFFF" cx="16" cy="16" r="1"/>
+        <circle fill="#FFFFFF" cx="10" cy="10" r="1"/>
+        <circle fill="#FFFFFF" cx="14" cy="10" r="1"/>
+        <circle fill="#FFFFFF" cx="10" cy="14" r="1"/>
+        <circle fill="#FFFFFF" cx="14" cy="14" r="1"/>
+    </g>
+</svg>

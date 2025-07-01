@@ -1,0 +1,111 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+
+const SKILLS = [
+  {
+    category: "Frontend",
+    skills: [
+      { name: "JavaScript", level: 90 },
+      { name: "HTML & CSS", level: 85 },
+      { name: "React", level: 75 },
+    ]
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "NodeJS", level: 85 },
+      { name: "PHP", level: 80 },
+      { name: "APIs RESTful", level: 90 },
+      { name: "MySQL", level: 75 },
+    ]
+  },
+  {
+    category: "Herramientas",
+    skills: [
+      { name: "Git", level: 85 },
+      { name: "Docker", level: 70 },
+      { name: "Postman", level: 90 },
+      { name: "ZohoCRM", level: 80 },
+    ]
+  },
+  {
+    category: "Automatización",
+    skills: [
+      { name: "n8n", level: 85 },
+      { name: "Webhooks", level: 90 },
+      { name: "Integración de Sistemas", level: 80 },
+      { name: "Data Science (en formación)", level: 65 },
+    ]
+  }
+]
+---
+
+<section class="fade-in-section">
+  <h2 class="text-3xl font-bold mb-8 text-center gradient-text">Mis Habilidades Técnicas</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 stagger-animation">
+    {SKILLS.map((skillGroup) => (
+      <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-gray-800/50 hover-lift">
+        <h3 class="text-xl font-bold mb-4 text-gray-200">{skillGroup.category}</h3>
+        <div class="space-y-4">
+          {skillGroup.skills.map((skill) => (
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-gray-300">{skill.name}</span>
+                <span class="text-gray-400 text-sm">{skill.level}%</span>
+              </div>
+              <div class="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+                <div 
+                  class="skill-bar h-full rounded-full bg-gradient-to-r from-blue-500 to-green-500" 
+                  style={`width: ${skill.level}%`}
+                >
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .skill-bar {
+    transition: width 1.5s ease-in-out;
+    width: 0;
+  }
+  
+  /* Animación para las barras de habilidades */
+  :global(.fade-in-section.is-visible) .skill-bar {
+    animation: fillBar 1.5s forwards ease-out;
+  }
+  
+  @keyframes fillBar {
+    from { width: 0; }
+    to { width: var(--width); }
+  }
+  
+  /* Inicializar las barras */
+  :global(.is-visible) .skill-bar {
+    --width: attr(style);
+  }
+</style>
+
+<script>
+  // Script para animar las barras de habilidades cuando son visibles
+  document.addEventListener('DOMContentLoaded', function() {
+    const skillBars = document.querySelectorAll('.skill-bar');
+    skillBars.forEach(bar => {
+      // Usamos getAttribute para obtener el ancho del atributo style
+      const styleAttribute = bar.getAttribute('style') || '';
+      const widthMatch = styleAttribute.match(/width:\s*([^;]+)/i);
+      const width = widthMatch ? widthMatch[1] : '0%';
+      
+      // Establecemos el ancho a cero inicialmente
+      bar.setAttribute('style', 'width: 0');
+      
+      // Guardamos el ancho original como atributo personalizado
+      bar.setAttribute('data-original-width', width);
+    });
+  });
+</script>
