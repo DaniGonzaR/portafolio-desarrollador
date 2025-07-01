@@ -156,7 +156,7 @@ function getLevelColor(level: number) {
                   loading="lazy"
                   decoding="async"
                   class="tech-icon w-14 h-14 object-contain"
-                  onerror="this.onerror=null; this.src='/default-tech-icon.svg';"
+                  onerror="this.onerror=null; this.src='/tech-icons/default-tech-icon.svg';"
                 />
               </div>
               <div class="text-center mt-2">
@@ -244,7 +244,7 @@ function getLevelColor(level: number) {
       if (icon instanceof HTMLImageElement) {
         icon.onerror = function() {
           this.onerror = null;
-          this.src = '/default-tech-icon.svg';
+          this.src = '/tech-icons/default-tech-icon.svg';
         };
       }
     });
